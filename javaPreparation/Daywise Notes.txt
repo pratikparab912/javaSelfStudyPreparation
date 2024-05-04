@@ -1,0 +1,190 @@
+Day1:
+	Class
+	Object
+	Methods
+	Flow of execution
+	Constructor
+	Variables
+		Local Variables	
+		Instance Variables
+		Dynamic Memory 
+	Garbage Collection
+	this
+
+Day2:
+
+	static keyword:
+		--static variable
+		--static method
+		--static block
+		--static class
+	
+	To execute Java Code
+		1. Save file with name of class with extension .java ex Test.java
+		2. Compile Java file javac FileName.java 
+		Test.class (Bytecode)
+		3. Execute ClassName.class file having main method
+		Instance Initilization-- empty block
+		
+		Java 11
+	
+	
+	Nested classes:
+	
+	class Outer{
+			static class Inner{
+			
+			
+			}
+	
+	
+	}
+	
+	Day3: 
+	
+		Getter and Setter methods
+		Access Modifies/Specifiers:
+			public 
+			private
+			protected
+			default
+		Oops:
+		Object
+		Class
+		Encapsulation
+		Abstraction--Abstract Class and Interfaces
+		Association: Relationship Between classes 
+			HAS-A --->  Aggregation   Employee ---- Department    Employee    Asset
+						Composition   Customer		Account
+						class Department{
+						
+						}
+						
+						class Employee{
+						   private Department department;
+						}
+			IS-A--	    Inheritance		Employee    PermanantEmployee
+				--Reusability
+				--Extensibility
+			
+			extends
+			class Parent{
+			
+			}
+			
+			class Child extends Parent{
+			
+			}
+			
+			Types of Inheritance:
+				1. Single Inheritance   A--->B
+				2. Multi Level Inheritance  A--->B----->C---->D
+				3. Hierarchical Inheritance     A
+				                              B   C
+				4. Multiple Inheritance    A   B    Not Supported in Java
+											 C
+											 
+											 
+												A
+											B-----		C
+											
+													D
+													
+					It can be supported with Interfaces:
+					
+					Constructor Inheritance:
+					
+					Note:
+					Parent Class Reference Variable can refer object Of Parent as well as Child class
+					Child Class Reference variable can refer only object of Child
+					
+					Dynamic Method Dispatch
+					Method Overriding
+
+		Day9:
+			
+	Functional Interface:
+
+	Predicate      boolean test()
+	Function 	apply()
+	Runnable      void run()
+	Supplier	get()
+	Consumer	accept() 
+	Comparator	int compareTo()
+
+	To implements Functional Interface we can use lambda expresasion java 8 feature
+
+
+	Without implementig interfcae we can define all abstract methods in Annonymous class.
+	It class without name.
+
+	Lambda Expression: Its new feature added in Java 8 which used to implement functional interface with
+very less code ie compact.
+
+			(Argument)=>{
+					body//logic
+
+			}
+
+			()=>{
+					body//logic
+
+			}
+		
+			()=>sop("Test");
+			
+			num->Sysout(num * num);
+
+
+
+		Day10: 
+				Stream: 
+					java.util.stream which consist various classes and interfaces to work on collections withou 
+			modyfieing
+
+			 list.stream()
+						.operation1()
+							.operation2()
+								.operation2()
+									terminal()
+
+	filter will return same object of type collection in stream
+Where as map() will return any type of processing result
+										
+
+						
+
+			
+
+	
+
+
+	
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

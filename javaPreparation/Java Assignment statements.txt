@@ -1,0 +1,220 @@
+1.Assignment Problem Statement: Inheritance and Dynamic Method Dispatch in Java
+ 
+Scenario:
+Imagine you are tasked with developing a payroll system for a company that employs different types of workers. The workers include Full-Time employees, Part-Time employees, and Contract employees. While all workers share some common attributes, such as employee ID, name, and basic salary, each type has unique attributes and methods specific to their employment.
+ 
+Requirements:
+ 
+1. Create a superclass called `Employee` with the following attributes:
+   - Employee ID
+   - Name
+   - Basic Salary
+ 
+2. Implement a method in the `Employee` class named `calculateSalary()`. This method will be overridden by the subclasses to calculate the salary based on the employment type.
+ 
+3. Create three subclasses: `FullTimeEmployee`, `PartTimeEmployee`, and `ContractEmployee`, each extending the `Employee` class.
+ 
+4. In each subclass, implement the `calculateSalary()` method to calculate the total salary based on their specific employment type:
+   - For `FullTimeEmployee`: Basic Salary + Bonus
+   - For `PartTimeEmployee`: Basic Salary * Hours Worked
+   - For `ContractEmployee`: Basic Salary * Contract Duration
+ 
+5. Use the `super` keyword to call the `calculateSalary()` method from the superclass in each subclass to include the common calculation for the basic salary.
+ 
+6. Implement a class called `PayrollSystem` with a method named `processPayroll()`. This method will take individual `Employee` objects as parameters and dynamically dispatch the `calculateSalary()` method for each employee.
+ 
+7. Demonstrate dynamic method dispatch by creating instances of different types of employees (FullTimeEmployee, PartTimeEmployee, and ContractEmployee) and invoking the `processPayroll()` method for each.
+ 
+8. Display the details of each employee, including their specific attributes and the calculated salary.
+ 
+By implementing this assignment, you will gain a practical understanding of inheritance, the use of the `super` keyword, and dynamic method dispatch in Java within the context of a real-world scenario.
+
+
+
+2. Assignment Problem Statement: Abstract Class and Method in Java (Different Scenario)
+
+Scenario:
+You are developing a simulation system for a zoo that houses various animals. The animals include mammals, birds, and reptiles. Each type of animal shares common properties such as age, name, and sound, but they also have unique characteristics and behaviors.
+
+Requirements:
+
+1. Create an abstract class named `Animal` with the following attributes:
+   - Age
+   - Name
+   - Sound
+
+2. Declare an abstract method in the `Animal` class called `makeSound()`. This method will be implemented by the subclasses to define the specific sound each type of animal makes.
+
+3. Create three subclasses: `Mammal`, `Bird`, and `Reptile`, each extending the `Animal` class.
+
+4. In each subclass, implement the `makeSound()` method to simulate the unique sound of the specific type of animal:
+   - For `Mammal`: Print a mammal-specific sound like "Roar" or "Chirp."
+   - For `Bird`: Print a bird-specific sound like "Tweet" or "Squawk."
+   - For `Reptile`: Print a reptile-specific sound like "Hiss" or "Growl."
+
+5. Include appropriate constructors in each subclass to initialize the specific attributes of the animal.
+
+6. Implement a class named `Zoo` with a method named `interactWithAnimal()`. This method will take an `Animal` object as a parameter and display details such as age, name, and the sound the animal makes.
+
+7. Demonstrate the use of abstract classes and methods by creating instances of different animals (Mammal, Bird, Reptile) and invoking the `interactWithAnimal()` method for each.
+
+8. Display the details of each animal, including its specific attributes and the sound it makes.
+
+By completing this assignment, you will gain practical experience in designing and implementing abstract classes and methods in Java within the context of a zoo simulation.
+---------
+
+3. Assignment Problem Statement: Interface in Java with Bank Scenario
+
+Scenario:
+You are developing a banking system that involves different types of accounts, each with specific functionalities. The system includes Savings Accounts, Current Accounts, and Fixed Deposit Accounts. Although these accounts share common functionalities, each type has unique features.
+
+Requirements:
+
+1. Create an interface named `BankAccount` with the following methods:
+   - `deposit(double amount)`: Adds the specified amount to the account balance.
+   - `withdraw(double amount)`: Deducts the specified amount from the account balance.
+   - `getBalance()`: Retrieves the current balance of the account.
+   - `calculateInterest()`: Calculates and returns the interest for the account.
+
+2. Implement three classes: `SavingsAccount`, `CurrentAccount`, and `FixedDepositAccount`. Each class should implement the `BankAccount` interface.
+
+3. In the `SavingsAccount` class:
+   - Implement the `calculateInterest()` method to calculate interest based on a fixed interest rate.
+   - Include a constructor to initialize the account balance.
+
+4. In the `CurrentAccount` class:
+   - Implement the `withdraw()` method to allow overdrafts up to a certain limit.
+   - Include a constructor to initialize the account balance.
+
+5. In the `FixedDepositAccount` class:
+   - Implement the `calculateInterest()` method to calculate interest based on the fixed deposit terms.
+   - Include a constructor to initialize the fixed deposit amount and terms.
+
+6. Implement a class named `BankApp` with a method named `performTransactions()`. This method will take an instance of the `BankAccount` interface as a parameter and demonstrate various transactions like deposit, withdrawal, and interest calculation.
+
+7. Demonstrate the use of the interface by creating instances of different account types (SavingsAccount, CurrentAccount, FixedDepositAccount) and invoking the `performTransactions()` method for each.
+
+8. Display the details of each account, including the current balance and any interest earned.
+
+By completing this assignment, you will gain practical experience in designing and implementing interfaces in Java within the context of a banking system.
+
+4. 
+//Accept number from user and Check weather it is even or odd
+// If it is even throw EvenException
+//If it is odd throw OddException
+
+5. 
+Assignment Problem Statement: Exception Handling in Java with Real-World Scenario for Audio Book App
+
+Scenario:
+You are developing an Audio Book application that allows users to borrow and return audio books from a digital library. Implement exception handling to gracefully manage errors during these transactions.
+
+Requirements:
+
+1. Create a class named `AudioBookLibrary` with a method named `borrowAudioBook(String title, String userId)`. This method should simulate the process of borrowing an audio book. Exceptions should be thrown under the following conditions:
+   - If the audio book is not available.
+   - If the user ID is not valid.
+
+2. Create a class named `AudioBook` with attributes like `title`, `author`, `narrator`, and `availableCopies`. Include a method in the `AudioBook` class named `decreaseAvailableCopies(int quantity)` to simulate the reduction of available copies when an audio book is borrowed.
+
+3. Implement a class named `User` with a method named `returnAudioBook(String title)`. This method should simulate the process of returning an audio book. Exceptions should be thrown under the following conditions:
+   - If the user is trying to return an audio book that was not borrowed.
+   - If the audio book title is not valid.
+
+4. Implement a class named `AudioBookCatalog` with a method named `searchAudioBook(String title)`. This method should simulate searching for an audio book in the digital catalog. Exceptions should be thrown under the following conditions:
+   - If the audio book is not found in the catalog.
+   - If the audio book title is not valid.
+
+5. Use custom exception classes, such as `AudioBookNotAvailableException`, `InvalidUserException`, `AudioBookNotReturnedException`, and `AudioBookNotFoundException`, to handle the specific exceptions mentioned above.
+
+6. Implement a class named `AudioBookApp` that demonstrates the use of exception handling by performing various transactions like borrowing, returning, and searching for audio books.
+
+7. Display appropriate error messages when exceptions occur, and ensure that the system gracefully handles errors without crashing.
+
+By completing this assignment, you will gain practical experience in designing and implementing exception handling in Java within the context of a real-world scenario for an Audio Book application.
+
+6.
+
+Assignment Problem Statement: Java Synchronization with Real-World Scenario
+
+Scenario:
+You are developing a reservation system for a concert ticket sales platform. The system needs to handle multiple users trying to reserve tickets simultaneously. Your task is to implement synchronization mechanisms to ensure that the reservation process is thread-safe.
+
+Requirements:
+
+1. Create a class named `TicketReservation` with the following attributes:
+   - `totalTickets`: Represents the total number of available tickets.
+   - `reservedTickets`: Represents the number of tickets reserved so far.
+
+2. Implement a method named `reserveTickets(int quantity)` in the `TicketReservation` class to simulate users reserving tickets. Multiple threads may attempt to reserve tickets simultaneously.
+
+3. Create a class named `User` that extends `Thread` or implements `Runnable`. Each `User` instance should have a reference to a `TicketReservation` object and attempt to reserve a random quantity of tickets.
+
+4. In the `TicketReservation` class, use synchronization mechanisms (e.g., `synchronized` methods or blocks) to prevent race conditions and ensure that the reservation process is thread-safe.
+
+5. Implement a class named `ConcertApp` that creates multiple `User` threads and starts them to interact with the `TicketReservation` concurrently.
+
+6. Demonstrate scenarios where multiple users are attempting to reserve tickets concurrently to highlight the importance of synchronization.
+
+7. Display the final number of reserved tickets after the concurrent reservations are completed to ensure data consistency.
+
+By completing this assignment, you will gain practical experience in implementing synchronization mechanisms in Java to address concurrency issues in a real-world scenario involving a ticket reservation system.
+
+7.
+Assignment Problem Statement:
+Design a multi-threaded Java application that explores the use of the `Callable` interface for concurrent programming. The application should involve the creation of a task that implements the `Callable` interface and is responsible for performing a computationally intensive operation.
+Requirements:
+1. Implement a class, let's call it `ComputationalTask`, that implements the `Callable` interface.
+2. The `ComputationalTask` class should take input parameters for the computation and return a result.
+3. Create a main program that utilizes the `ExecutorService` to manage multiple instances of the `ComputationalTask` concurrently.
+4. Demonstrate the proper handling of the `Future` object to retrieve the result of each task.
+5. Allow the user to specify the number of threads in the thread pool and the parameters for each computation.
+6. Display the results of the computations along with relevant information such as execution time and thread details.
+Ensure proper synchronization and exception handling throughout the implementation. The goal is to showcase the benefits of using the `Callable` interface for multi-threaded programming in Java.
+
+8.
+Assignment Problem Statement:
+Develop a Java program that explores the concept of a thread pool in multi-threaded programming. The objective is to demonstrate the efficient management of threads through a thread pool, enhancing the performance of concurrent tasks.
+Requirements:
+1. Implement a task, for example, a `TaskExecutor`, that represents a computationally intensive operation.
+2. Design a thread pool manager class, e.g., `ThreadPoolManager`, responsible for creating and managing a fixed-size thread pool.
+3. Allow the user to specify the number of threads in the pool and the number of tasks to be executed concurrently.
+4. Utilize the `ExecutorService` and `ThreadPoolExecutor` classes for creating and managing the thread pool.
+5. Implement proper synchronization mechanisms and exception handling within the program.
+6. Demonstrate the submission of multiple instances of the `TaskExecutor` to the thread pool for concurrent execution.
+7. Include functionality to monitor and display relevant information such as the status of each task, completion details, and thread utilization.
+The aim is to showcase the advantages of using a thread pool for efficient thread management, resource utilization, and improved performance in a multi-threaded environment.
+
+9.
+Assignment Problem Statement:
+Develop a Java program to illustrate the concept of inter-thread communication in a multi-threaded environment. The goal is to demonstrate how threads can communicate and synchronize their activities to achieve proper coordination and data sharing.
+Requirements:
+1. Create two classes representing different threads, e.g., `Producer` and `Consumer`.
+2. Implement a shared resource, e.g., a `Buffer` class, which will be accessed by both the producer and consumer threads.
+3. Utilize synchronized methods or blocks to ensure proper access and modification of shared data within the `Buffer`.
+4. Demonstrate the use of `wait()` and `notify()` (or `notifyAll()`) methods for efficient inter-thread communication.
+5. The `Producer` thread should generate data and deposit it into the `Buffer`, while the `Consumer` thread should retrieve and process the data.
+6. Implement proper error handling and synchronization to prevent race conditions and deadlock situations.
+7. Allow the user to specify the size of the buffer and the number of items to be produced and consumed.
+The objective is to showcase the importance of inter-thread communication for synchronized and efficient collaboration between threads, avoiding issues like data corruption or deadlock scenarios in a multi-threaded Java application.
+
+10. Write menu driven program to display records 1. first record  2. last record 3. next record 4.previous record
+
+11.
+Assignment Problem Statement:
+You are tasked with developing a Java application for a product management system that utilizes Object-Oriented Programming (OOP) concepts, collections, multi-threading, interfaces, and JDBC with MySQL. The system should handle various operations related to managing products and their information.
+Scenario:
+You are developing a product inventory management system for an online retail company. The system should allow users to add, view, update, and delete products. Additionally, users should be able to search for products based on different criteria such as name, category, price range, etc.
+Requirements:
+1. Implement a Product class with attributes such as ID, name, category, price, quantity, etc. Utilize encapsulation to ensure data integrity.
+2. Implement a collection (e.g., ArrayList) to store and manage a list of products within the system.
+3. Implement interfaces (e.g., Comparable) to enable sorting of products based on different attributes like name, price, etc.
+4. Utilize multi-threading to handle concurrent access to the product inventory. Implement synchronization mechanisms to prevent data corruption.
+5. Implement JDBC to connect the application to a MySQL database. Create a database schema with tables to store product information.
+6. Implement methods for CRUD (Create, Read, Update, Delete) operations on the product inventory. Ensure that changes made to the inventory are reflected in the database.
+7. Implement functionality to search for products based on different criteria (e.g., name, category, price range) using SQL queries.
+8. Implement error handling and exception handling to deal with unexpected situations gracefully.
+Deliverables:
+
+
+

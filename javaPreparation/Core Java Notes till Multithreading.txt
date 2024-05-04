@@ -1,0 +1,719 @@
+Constructor: 
+	Its is special member function/method of class.
+	Its Special because name of constructor is same as name of class.
+	It is used to construct the object ie used to initilised the data members of class
+	Constructor never returns any value hence we never put return type to it even void
+	It is called automatically when we create object of that class
+	Hence Constructor is called only once in life of perticular object
+	Constructor can be public or private
+
+	class Addtion{
+		public Addition(){
+			//Non-Parameterised Constructor
+		}
+		public Addition(int num1 , int num2){
+			//Parameterised Constructor
+		}
+		public void display(){
+
+		}
+	
+	}
+
+	Constructor can be overloaded:
+
+	types Constructors:
+	1. Non-Parameterised Constructor:
+
+	2. Parameterised Constructor:
+		Addition obj = new Addition(10,20);
+
+	3. Default Constructor
+
+
+===================================================================
+
+	Wrapper Classes:
+
+	Every primitive we have associated wrapper classes
+
+	byte------>Byte
+	short----->Short
+	char----> Character
+	int ---->Integer
+	long---->Long
+	float--->Float
+	double---->Double
+
+	boolean---->Boolean
+
+	Are used to convert primitive type to non primitive and vice versa.
+
+
+	int num = 10;//STACK
+
+	Integer obj = new Integer(num);//Wrapping //HEAP   --Boxing---Conversion of primitive to Non-primitive type
+
+	int n = obj.intValue();//10 UnBoxing---Conversion of Non-primitive to primitive   xxxxValue()
+
+	AutoBoxing----> Automatic conversion of primitive type to non-primitive
+
+	ArrayList al = new ArrayList();
+
+	al.add(10);//AutoBoxing
+
+
+	Character ch = new Character();
+	
+=======================================================================
+
+
+
+	Inheritance:
+		1. Reusability of Code
+		2. Extensibility
+
+	class Parent{
+		//private properties are not available for inheritance
+		public
+		protected
+		default
+
+	}
+	class Child extends Parent{
+
+
+	}
+
+Types of Inheritance:
+
+1. Single Inheritance
+
+	class A{
+
+	}
+
+	class B extends A{
+
+	}
+
+2. Multi Level Inheritance;
+
+	class A{
+
+	}
+
+	class B extends A{
+
+	}
+
+	class C extends B{
+
+	}
+
+3. Hierarchichal Inheritance
+
+	class A{
+
+	}
+
+	class B extends A{
+
+	}
+	class C extends A{
+
+	}
+
+4. Multiple Inheritance: Not supported by Java
+
+	For single child if we have written more than one parent
+
+
+Even thow this inheritance type not supported by java classes but supported by java interfaces
+
+
+Method Overriding:
+
+	Constructor Inheritance:
+
+	class A{
+		
+	}
+
+
+
+
+	abstract keyword:
+		1. abstract method---> It is method without body ie implementation
+
+			public void addition(){
+				//non abstract method
+			}
+
+			abstract public void addition(); // abstract method
+
+			Shape
+				area()
+
+	Triangle	Rectangle		Circle     	Childs of Shape
+	1/2 l*b		l * b			3.14 * r * r
+
+
+		
+		2. abstract class: its class declare as abstract by using abstract keyword
+
+		Rules:
+		1. We can't create object of abstract class
+			Shape shape;
+			 shape = new Shape(); // ERROR
+		2. If class has abstract method, It must be abstract class
+		3. If class is abstract then it need not have abstract method
+		4. It is used as Parent class ie through Child class object we can aceess members of abstract class
+		5. It can have abstract as well as non abstract methods
+		6. All Abstract methods have implemented in child class otherwise we can declare child class as abstract
+
+	why to use:
+		1. Its used to achieve 0-100% abstract
+		2. Its used to acieve dynamic polymorphism
+			
+	
+
+	abstract public class Shape{
+		---
+		---
+		abstract public void area(); //abstract
+	
+	}
+
+	public class Triangle extends Shape{
+
+		public void area(){
+			double area = 0.5 * l * b;
+		}
+	}
+	public class Rectangle extends Shape{
+
+		public void area(){
+			double area = l * b;
+		}
+	}
+
+
+
+
+
+	Interface:
+
+	Interfaces contains abstract methods. All methods are by abstract and public
+	Its is used to achieve abstraction and dynamic polymorphism
+
+	public interface InterfaceName{
+
+		//abstract method
+		//since java 8 we can add method with body static method and default method
+	}
+
+
+	public interface Operation{
+
+		public int addition(int num1, int num2); //abstract method
+		public int multiply(int num1 , int num2);
+	}
+
+	We can not create object interface 
+	//Operation ref = new Operation();//ERROR
+
+	Operation ref;
+
+	Interfaces are always implemented by classes.
+	// So have define all abstract methods present in interface otherwise class have declare as abstract
+	public class ClassName implements InterfaceName{
+
+
+	}
+
+	public class DemoClass implements Operation{
+
+		//define all abstract methods
+	} 
+
+
+
+	One Interface can be implemented by more than one classes
+
+	Interface variable can refer object of class which implements that interface
+
+
+Can interface be extended?
+Yes, One interface can extends another interface. Parent child relationship between interface is possible
+If class implements Child interface then that class have to define all abstract methods from parent as well as child interface
+One class can implements more than one interface
+
+
+Multiple Inheritance through Interface:
+
+	One Interface can extends more than one interface
+	One class can not extends more than one class
+
+but     One can can implements more than one interface
+
+	Default and static method in interfaces:Since Java 8
+		Both method are the methods with body within interface
+	1. Default method in interface:
+		It is not compulsary to override this method in classes which implements the interface
+
+	Difference:
+
+	Static method can not override by classes which implements that interface \
+but default method can be override
+
+Operation.display();// static method is called by using interface name
+
+
+	Functional Interface?
+
+	It is interface with only one abstract method.
+	It can have many default and static methods
+
+	@FunctionalInterface
+	public class Operation{
+		public void display();
+	}
+
+	Runnable---> run()
+	Comparable-->compare()
+	etc
+
+	Marker Interface: Its interface without abstract method
+
+	Serializable,Clonable,Remote etc
+	
+=========================================================================================
+
+
+		Exception Handling:
+
+	Exception: 
+		Its run time error or anamoly occur in program execution which stops execution of program or application
+Clasuse:
+	try
+	catch
+	throws
+	throw
+	finally
+
+	try{
+
+		//The code which might raise an exception
+	}catch(ExceptionType e){
+		//Exception Handling
+	}
+
+Catch clause is executed only when exception get occur
+
+
+
+finally: It is executed compulsary weather exception raised or not
+
+
+
+	Exception Hierarchy:
+
+				Throwable
+
+		Exception				Error
+								StackOverFlow
+			IOException					VirtualMachineError
+			SQLException					OutOfMemeoryError
+			ClassNotFoundException
+				RunTimeException
+					ArithmeticException
+					NullPointerException
+					ArrayIndexOutOfBoundsException
+					StringIndexOutOfBoundsException
+
+			
+				Types Of Exceptions:
+
+		1.Built In Exception
+
+		2. User Defined Exception--> BalanceNotSufficientException , CartEmptyException, SearchNotFoundException etc
+
+
+		OR
+
+	1. Compile Time Exception / Static Exception / Checked Exception: These are checked for exception handling code at compile time
+		IOException
+		SQlException
+		ClassNotFoundException
+
+	2. Run Time Exception / Dynamic Exception / Un Checked Exception:These are checked for exception handling code at run time
+
+		ex. NullPointerException, ArithmaticException
+
+
+
+
+========================================
+
+	throws Clouse: is used to declare exception in method defination so that it can propagated to another function
+
+
+	Exception propagation--> tranfer/pass exception rased in one function into another function
+
+
+	function1        function2          function3
+	raised exp
+
+	Checked kind of exception can't propagate automatically --- for that we have to use throws
+
+	UnChecked kind exceptions can propagate automatically--- so need to use throws 
+
+
+
+	User Defined Exception--> BalanceNotSufficientException , CartEmptyException, SearchNotFoundException etc
+		These are business Logic Exceptions
+
+	
+	throw clause is used to throw exceptions explicitely.
+	
+	int div = 10 / 0;// It raised or thow ArithmeticException
+
+	throw ExceptionObject;//Raised exception
+
+	ex. throw new ArithmeticException();// inside try 
+
+	or 
+		throw e; 
+
+	throw new CartEmptyException();
+
+
+
+
+	Steps:
+
+	1. Create User Defined Exception Class and extends with Exception or RunTimeException
+
+	public class CartEmptyException extends Exception{
+
+		public CartEmptyException(String message){
+			supper(message)
+		}
+
+	}
+
+
+	2. In Logical Class Create Object and throw according to condition
+
+
+=======================================
+	Multi threading :
+
+		Multi Tasking---> Executing multiple task at a time
+
+	Multi Processing: Multiple processes will get executed at time
+	Multi Threading: Multiple threads will be get executed at a time
+
+	Thread---> Thread is sub process of main Process
+		Human Body---Process
+		Talking,Walking,Breathing,Watching---->Threds
+
+	Thread shares the memory hence efficient than Process
+
+
+	How Create Thread in Java:
+
+	1. extends Thread class
+
+	public class MyThread extends Thread{
+		//User defined Thread
+		public void run(){
+
+			//Thread Logic
+			//sleep(),wait(),suspend(),notify(),notifyAll(),resume()
+		}
+	}
+	2. implements Runnable interface
+		public class MyThread implements Runnable{
+			//User Defined Thread
+			Thread t;
+			public void run(){
+				//Thread Logic
+				//t.sleep(),t.wait(),t.suspend(),t.notify(),t.notifyAll(),t.resume()
+			}
+		}
+	3. By using Thread class with Annonymous class
+		Thread myThread = new Thread(){
+
+			//User defined Thread
+
+			public void run(){
+				//Thread Logic
+				//sleep(),wait(),suspend(),notify(),notifyAll(),resume()
+			}
+		};
+
+
+
+
+
+In All cases we have start method which is used to start thread.
+
+MyThread thread1 = new MyThread();
+	thread.start();//Invokes run()
+		or
+	myThread.start();//
+
+
+
+
+
+
+=====================================================
+
+
+		Thread Life Cycle:
+
+		
+		1. New Born Phase: When we create object Thread Class
+
+		2. Runnable Phase: Waiting to be get executed. CPU Schedular have not selected yet ie NO CPU time allocated. start()--->push thread to runnable phase
+		
+		3. Running: Execting Thread Logic. run() method executution. As it get CPU time---Its Done CPU Schedular
+	
+		4. Blocked Phase: Tempararly Stoped executuion. run() method executuion stoped--sleep(),wait(),suspend()-->these methods push thread to blocked
+			sleep()---As specified time finish it comes back to runnable ie running
+			wait()---> notify() or notifyAll()
+			suspend()---->resume() or resumeAll()
+
+		5. Dead Phase: Execution completed OR Its terminated
+
+			-Normal execution completed
+			-stop()
+
+======================================================================================
+
+		Thread Syncronization: With syncronization if one thread is executing or procesing shared resource other threads can not access it.
+			It put mutual exclusive lock on it like monitor concept in operating system so than only one thread will process it at a time
+
+		Shared Resources in multiple Threads
+
+		InConsistancy ---> Wrong output 
+
+
+										      Shared Resource
+						Child(Thread1)<------------------JointAccount(balance=10,000)------------------>Parent(Thread)
+												5000				balance=10,000
+						balance= 5000					0				withdraw(amount 5000)  ie 10,000-5000								
+						withdraw(amount 5000) ie 5000-5000						balance= 0
+
+
+
+				With Syncronization
+
+				  							Shared Resource
+						Child(Thread1)<------------------JointAccount(balance=10,000)------------------>Parent(Thread)
+												5000				balance=10,000
+						balance= 5000									withdraw(amount 5000)  ie 10,000-5000								
+						withdraw(amount 5000) ie 5000-5000						balance= 5000
+						balance = 0
+
+			To use practically thread syncronization
+
+
+			just use syncronized keyword to method or block
+
+
+					syncronized public void withdraw(double amount){
+
+							---
+							---
+					}
+
+				OR
+
+				syncronized{
+
+
+
+				}
+
+
+===================================================
+
+	Annonimous class: It is class without name.
+	It is used only once and have to write inside method.
+
+	Interface/Classname varName = new Interface/ClassName(){
+
+		public void display(){
+
+		}
+		
+	}
+
+
+
+	varName.display();
+
+=================================================================================
+
+	-Callable Interface
+	-Thread Pooling (Executor Framework)
+	-Inter Thread Communication
+
+
+
+	-Thread Pooling (Executor Framework):
+
+	Anis---Task1-------> Thread1
+	Uday---Task2-------> Thread2
+	--
+	---
+	Manisha--Task6-----> Thread6
+
+	Creating new Thread is very expencive process
+
+	Assume we 1000 of task----> Creating Thousand (1000)thread is not good practice
+
+	Solution---> Create Pool 50 threads-----> 50task will be executed/completed at a time
+		As 50 completed---->next task will be assign to these threads
+
+
+
+	Real Life:
+
+		Request1---->			Servers(Web Server/Application) 
+		Request2---->				(Thread Pool)
+
+		Requestn---->				(T1 T2 T2 T4.....T60)
+
+
+	Executor Framework:
+
+	ExecutorService service = Executors.newFixedThreadPool(pool size);
+
+		ExecutorService service = Executors.newFixedThreadPool(5);
+
+
+		service.execute(new TaskThread())
+			OR
+		execute.submit()
+
+
+		service.shutdown()
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	Inter Thread Communication / Co-operation:
+		Its mechanism in which multiple threads will interact with other. They will co-perate with each other to fullfill task.
+		Its used in shared resources ie synchronized resources.
+
+		wait()---> will release lock
+
+
+		EmployeeThread	----withdraw->	wait()		BankAccount	<-notify() or notofyAll()---deposited-		CompanyThread
+
+
+=============================================================================================================================
+
+		Callable Interface: 
+
+		Runnable--->   public void run(){
+					//thread Logic
+
+				}
+
+		Callable--->   public Object call() throws Exception{ 
+
+				//Thread Logic return value;
+				}
+
+		public class MyCallable implements Callable{
+				public Object call() throws Exception{ 
+
+				//Thread Logic 
+
+					return value;
+				}
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

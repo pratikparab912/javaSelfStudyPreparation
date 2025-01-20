@@ -1,0 +1,6 @@
+There are four types of clouds: Cirrus, Cumulus, Stratus, and Nimbus. Each cloud has a height range
+from land: 8000-12000 meters, 4000-8000 meters, 2000-4000 meters, and 0-2000 meters, respectively,
+as listed above. Only Nimbus clouds have the ability to drop rain. I want to write a Java program
+to display the number of clouds, then print the names of the clouds, then print the names of the clouds
+with their ranges, and lastly, print that only Nimbus clouds have the ability to drop rain. I want to
+use a HashMap with the key as the type of cloud and the value as its range.
